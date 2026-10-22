@@ -10,6 +10,7 @@ class T(unittest.TestCase):
     def setUp(self):
         f = tempfile.NamedTemporaryFile(suffix=".db", delete=False); f.close(); self.path = f.name
         self.app = create_app({"DATABASE": self.path, "TESTING": True, "SECRET_KEY": "t",
+                               "ADMIN_USERNAME": "admin",
                                "ADMIN_PASSWORD_HASH": generate_password_hash("correct horse battery")})
         self.c = self.app.test_client()
 

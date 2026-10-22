@@ -2,3 +2,17 @@
 *.db
 __pycache__/
 venv/
+
+# Keep local secrets and environment files private
+.env*
+!.env.example
+
+# Keep local databases and backup files out of Git
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+
+# Python virtual environments and caches
+venv/
+__pycache__/
