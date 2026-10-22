@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pulse Fitness Studio | Train with energy</title>
+<meta name="description" content="Pulse Fitness Studio: a gym and fitness studio website designed and built by Paseda Adeolu Praise.">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b0b0c;--bg2:#111113;--card:#161618;--text:#f4f4f0;--muted:#a2a2a8;--acc:#c6ff3d;--line:#28282c;--on:#0b0b0c;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){:root{color-scheme:light;--bg:#f6f6f1;--bg2:#ecece5;--card:#fff;--text:#111113;--muted:#5a5a62;--acc:#3f7d00;--line:#dcdcd2;--on:#fff}}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;margin:0}
+a{color:inherit}
+.demo{background:var(--acc);color:var(--on);text-align:center;font-size:13px;font-weight:700;padding:6px 12px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:400 26px Anton,sans-serif;letter-spacing:.04em;text-decoration:none;text-transform:uppercase}.logo i{color:var(--acc);font-style:normal}
+nav{display:flex;gap:24px;align-items:center}nav a{text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}nav a:hover{color:var(--acc)}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 14px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:99px;background:var(--acc);color:var(--on);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px var(--acc)}.btn.o{background:transparent;color:var(--text);border:2px solid var(--text)}
+#bg{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:18px}
+@media(max-width:820px){#bg{display:block}nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:18px 20px;border-bottom:1px solid var(--line);display:none}nav.open{display:flex}}
+.hero{position:relative;overflow:hidden;padding:80px 20px 90px}
+.fl{position:absolute;font-size:44px;opacity:.35;animation:fy 8s ease-in-out infinite}.fl:nth-child(1){right:8%;top:14%}.fl:nth-child(2){right:22%;bottom:12%;animation-delay:-3s}.fl:nth-child(3){left:4%;bottom:10%;animation-delay:-5s}
+@keyframes fy{50%{transform:translateY(-20px) rotate(10deg)}}
+.hero .in{position:relative;max-width:1120px;margin:0 auto}
+.eb{color:var(--acc);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(56px,11vw,140px);margin:12px 0 16px}.hero h1 span{color:var(--acc)}
+.hero p{max-width:480px;color:var(--muted);font-size:18px;margin:0 0 26px}
+.ecg{width:min(100%,520px);margin-top:34px;display:block}.ecg path{fill:none;stroke:var(--acc);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:640;stroke-dashoffset:640;animation:ecg 3.2s linear infinite}
+@keyframes ecg{60%,100%{stroke-dashoffset:0}}
+.tick{background:var(--acc);color:var(--on);overflow:hidden;padding:10px 0;font:400 22px Anton,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.tick div{display:flex;gap:40px;width:max-content;animation:mq 24s linear infinite}.tick span::after{content:"●";margin-left:40px;font-size:12px}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:80px 20px}.wrap{max-width:1120px;margin:0 auto}
+.head{margin-bottom:30px}.head h2{font-size:clamp(38px,6vw,68px);margin-top:6px}.head p{color:var(--muted);margin:8px 0 0;max-width:520px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:9px 20px;border-radius:99px;font:700 13px Inter,sans-serif;cursor:pointer;transition:.2s}
+.tabs button[aria-pressed="true"]{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.tt{display:grid;gap:10px;margin-top:14px}
+.cl{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;animation:pop .4s both;transition:border-color .2s,transform .2s}
+.cl:hover{border-color:var(--acc);transform:translateX(4px)}
+.cl .t{font:400 24px Anton,sans-serif;color:var(--acc)}.cl b{display:block;font-size:17px}.cl small{color:var(--muted)}
+.ty{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid var(--acc);color:var(--acc);margin-right:8px}
+.cl button{min-width:118px;border:2px solid var(--acc);background:transparent;color:var(--acc);border-radius:99px;padding:9px 14px;font:700 13px Inter,sans-serif;cursor:pointer;transition:.2s}
+.cl button[aria-pressed="true"]{background:var(--acc);color:var(--on)}.cl button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:560px){.cl{grid-template-columns:70px 1fr}.cl button{grid-column:1/-1}}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.bk{margin:12px 0 0;color:var(--muted);font-size:14px}
+.band{background:var(--bg2)}
+.sw{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px;margin-bottom:24px}
+.sw button{border:0;background:none;color:var(--muted);padding:9px 22px;border-radius:99px;font:700 13px Inter,sans-serif;cursor:pointer}.sw button[aria-pressed="true"]{background:var(--acc);color:var(--on)}
+.pl{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;transition:transform .3s,border-color .3s}.pc:hover{transform:translateY(-6px);border-color:var(--acc)}
+.pc.pop{border:2px solid var(--acc)}.pc .bdg{position:absolute;right:18px;top:-12px;background:var(--acc);color:var(--on);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:99px}
+.pc h3{font-size:30px}.pc .pr{font:400 52px Anton,sans-serif;margin:10px 0 0}.pc .pr small{font:500 14px Inter;color:var(--muted)}.pc .sv{color:var(--acc);font-size:13px;min-height:20px;margin-bottom:12px}
+.pc ul{list-style:none;padding:0;margin:0 0 20px;color:var(--muted)}.pc li{padding:4px 0}.pc li::before{content:"✓";color:var(--acc);margin-right:10px;font-weight:700}
+.tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.tc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;text-align:center;transition:transform .3s}.tc:hover{transform:translateY(-5px)}
+.av{width:78px;height:78px;border-radius:50%;background:var(--acc);color:var(--on);display:grid;place-items:center;font:400 32px Anton,sans-serif;margin:0 auto 12px;animation:pu 2.6s ease-in-out infinite}
+@keyframes pu{50%{box-shadow:0 0 0 12px color-mix(in srgb,var(--acc) 22%,transparent)}}
+.tc h3{font-size:26px}.tc p{color:var(--muted);margin:4px 0 0;font-size:14px}
+form.f{max-width:620px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.f .w{grid-column:1/-1}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+input,select{width:100%;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:16px Inter,sans-serif}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.err{color:#ff6b6b;font-size:12.5px;display:block;margin-top:3px}input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#ff6b6b}
+#ok{display:none;max-width:620px;margin:0 auto;text-align:center;background:var(--card);border:2px solid var(--acc);border-radius:20px;padding:32px}#ok.show{display:block;animation:pop .5s both}
+@media(max-width:560px){form.f{grid-template-columns:1fr}}
+.inf{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.inf .tc{text-align:left}.inf ul{list-style:none;margin:8px 0 0;padding:0;color:var(--muted)}.inf li{display:flex;justify-content:space-between;padding:3px 0}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);font-size:14px}footer a{color:var(--acc)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}.ecg path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="demo">Portfolio project by Paseda Adeolu Praise · class booking, plans and the trial form are a demo</div>
+<header><div class="bar"><a class="logo" href="#top">Pulse<i>.</i></a>
+  <button id="bg" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav id="nav"><a href="#classes">Classes</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a class="btn" href="#trial" style="padding:10px 18px;color:var(--on)">Free trial</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><span class="fl" aria-hidden="true">🏋️</span><span class="fl" aria-hidden="true">⚡</span><span class="fl" aria-hidden="true">🔥</span>
+  <div class="in"><div class="eb">Strength · Cardio · Yoga · HIIT</div>
+    <h1>Train with<br><span>energy.</span></h1>
+    <p>Small classes, expert coaches and a studio built to keep you moving. Find a class, pick a plan and start your free trial.</p>
+    <a class="btn" href="#classes">See the timetable</a> <a class="btn o" href="#plans">View plans</a>
+    <svg class="ecg" viewBox="0 0 520 70" aria-hidden="true"><path d="M0 40H120L140 40L155 12L175 62L192 28L205 40H330L350 40L365 10L385 64L402 30L415 40H520"/></svg>
+  </div></div>
+<div class="tick" aria-hidden="true"><div><span>Strength</span><span>Cardio</span><span>Yoga</span><span>HIIT</span><span>Mobility</span><span>Boxing</span><span>Strength</span><span>Cardio</span><span>Yoga</span><span>HIIT</span><span>Mobility</span><span>Boxing</span></div></div>
+
+<section id="classes"><div class="wrap">
+  <div class="head rv"><div class="eb">Weekly timetable</div><h2>Find your class</h2><p>Choose a day, filter by style and reserve your spot.</p></div>
+  <div class="tabs rv" id="dt" role="tablist" aria-label="Day"></div><div class="tabs rv" id="ft" aria-label="Class type"></div>
+  <div class="tt" id="tt" aria-live="polite"></div><p class="bk" id="bk"></p>
+</div></section>
+
+<section id="plans" class="band"><div class="wrap">
+  <div class="head rv"><div class="eb">Membership</div><h2>Pick your plan</h2><p>No joining fee. Switch to yearly and save.</p></div>
+  <div class="sw rv" role="group" aria-label="Billing"><button data-b="m" aria-pressed="true">Monthly</button><button data-b="y" aria-pressed="false">Yearly · save 20%</button></div>
+  <div class="pl" id="pl"></div>
+</div></section>
+
+<section id="trainers"><div class="wrap"><div class="head rv"><div class="eb">Coaches</div><h2>Meet the team</h2></div>
+  <div class="tr"><div class="tc rv"><div class="av">J</div><h3>Jordan</h3><p>Strength &amp; conditioning</p></div><div class="tc rv"><div class="av">A</div><h3>Aisha</h3><p>Yoga &amp; mobility</p></div><div class="tc rv"><div class="av">K</div><h3>Kofi</h3><p>HIIT &amp; boxing</p></div></div></div></section>
+
+<section id="trial" class="band"><div class="wrap"><div class="head rv" style="text-align:center"><div class="eb">Start today</div><h2>Book a free trial</h2></div>
+  <form class="f rv" id="tf" novalidate><div><label for="n">Name</label><input id="n" autocomplete="name"><span class="err"></span></div><div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><span class="err"></span></div>
+    <div><label for="p">Interested in</label><select id="p"></select></div><div><label for="d">Preferred date</label><input id="d" type="date"><span class="err"></span></div>
+    <div class="w"><button class="btn" type="submit" style="width:100%">Claim free trial</button><p style="font-size:12px;color:var(--muted);text-align:center;margin:8px 0 0">Demo form: nothing is sent or stored.</p></div></form>
+  <div id="ok" role="status"><h3 style="font-size:36px;color:var(--acc)">Demo request received</h3><p id="okt" style="color:var(--muted)"></p><p style="font-size:13px;color:var(--muted)">No trial was booked and no data left your browser.</p></div>
+</div></section>
+
+<section><div class="wrap"><div class="inf"><div class="tc rv"><h3>Hours</h3><ul><li><span>Mon – Fri</span><span>6am – 9pm</span></li><li><span>Saturday</span><span>8am – 6pm</span></li><li><span>Sunday</span><span>9am – 4pm</span></li></ul></div>
+  <div class="tc rv"><h3>Find us</h3><p style="color:var(--muted)">14 Fitness Way (sample address)<br>Phone: 555-0166</p><p><a style="color:var(--acc);font-weight:700" href="https://www.google.com/maps/search/?api=1&amp;query=gym" target="_blank" rel="noopener">Open in maps ↗</a></p></div>
+  <div class="tc rv"><h3>First visit?</h3><p style="color:var(--muted)">Bring a towel and a water bottle. Our coaches will show you around and suggest the right class.</p></div></div></div></section>
+</main>
+<footer>© 2026 Pulse Fitness Studio. Designed &amp; built by Paseda Adeolu Praise · <a href="https://linkedin.com/in/pasedaadeolu" target="_blank" rel="noopener">LinkedIn</a></footer>
+
+<script>
+(function(){
+  var D=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],T=["Strength","Cardio","Yoga","HIIT"];
+  var B=[["06:30","Power Lift","Strength","Jordan"],["07:30","Sunrise Flow","Yoga","Aisha"],["09:00","Spin Burn","Cardio","Kofi"],["12:15","Lunch HIIT","HIIT","Kofi"],["17:30","Full Body Strength","Strength","Jordan"],["18:30","Boxing Cardio","Cardio","Kofi"],["19:00","Evening Yoga","Yoga","Aisha"],["19:30","Tabata Blast","HIIT","Jordan"]];
+  var day=new Date().getDay();day=(day+6)%7;var type="All",booked={};
+  var dt=document.getElementById("dt"),ft=document.getElementById("ft"),tt=document.getElementById("tt");
+  function classes(d){var r=[];for(var i=0;i<4;i++)r.push(B[(d*3+i*2)%B.length]);r.sort(function(a,b){return a[0]<b[0]?-1:1});return r.filter(function(x,i,a){return a.indexOf(x)===i})}
+  function spots(d,i){return (d*5+i*3)%7}
+  function draw(){var rows=classes(day).map(function(c,i){return{c:c,k:day+"-"+c[0],s:spots(day,i)}}).filter(function(o){return type==="All"||o.c[2]===type});
+    tt.innerHTML=rows.length?rows.map(function(o,n){var b=!!booked[o.k],left=o.s-(b?1:0);
+      return '<div class="cl" style="animation-delay:'+n*60+'ms"><div class="t">'+o.c[0]+'</div><div><b>'+o.c[1]+'</b><small><span class="ty">'+o.c[2]+'</span>with '+o.c[3]+' · '+(o.s===0?"Full":left+" spot"+(left===1?"":"s")+" left")+'</small></div><button data-k="'+o.k+'" aria-pressed="'+b+'"'+(o.s===0?" disabled":"")+'>'+(o.s===0?"Full":b?"Booked ✓":"Book")+'</button></div>'}).join(""):'<p style="color:var(--muted)">No classes of this type on '+D[day]+'. Try another filter.</p>';
+    var n=Object.keys(booked).filter(function(k){return booked[k]}).length;document.getElementById("bk").textContent=n?"You have "+n+" demo class"+(n>1?"es":"")+" reserved. Nothing is saved or sent.":"Tap Book to reserve a demo spot. Nothing is saved or sent."}
+  D.forEach(function(n,i){var b=document.createElement("button");b.textContent=n;b.setAttribute("aria-pressed",i===day);b.onclick=function(){day=i;dt.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw()};dt.appendChild(b)});
+  ["All"].concat(T).forEach(function(n){var b=document.createElement("button");b.textContent=n;b.setAttribute("aria-pressed",n==="All");b.onclick=function(){type=n;ft.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw()};ft.appendChild(b)});
+  tt.addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;booked[b.dataset.k]=!booked[b.dataset.k];draw()});draw();
+
+  var P=[["Basic",29,["Open gym access","2 classes per week","Locker room access"]],["Plus",49,["Open gym access","Unlimited classes","Guest pass each month"]],["Elite",79,["Everything in Plus","Monthly coaching session","Recovery lounge access"]]],yearly=false,pl=document.getElementById("pl");
+  function plans(){pl.innerHTML=P.map(function(p,i){var m=yearly?Math.round(p[1]*.8):p[1];
+    return '<div class="pc'+(i===1?" pop":"")+' rv in">'+(i===1?'<span class="bdg">Most popular</span>':'')+'<h3>'+p[0]+'</h3><div class="pr">$'+m+'<small> /month</small></div><div class="sv">'+(yearly?"Billed yearly · you save $"+Math.round(p[1]*.2*12)+" a year":"")+'</div><ul>'+p[2].map(function(f){return "<li>"+f+"</li>"}).join("")+'</ul><button class="btn'+(i===1?"":" o")+'" data-p="'+i+'" style="width:100%">Choose '+p[0]+'</button></div>'}).join("")}
+  document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){yearly=b.dataset.b==="y";document.querySelectorAll(".sw button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});plans()}});plans();
+  var sel=document.getElementById("p");sel.innerHTML=P.map(function(p){return "<option>"+p[0]+" plan</option>"}).join("");
+  pl.addEventListener("click",function(e){var b=e.target.closest("[data-p]");if(!b)return;sel.selectedIndex=+b.dataset.p;document.getElementById("trial").scrollIntoView({behavior:"smooth"})});
+
+  var f=document.getElementById("tf"),t=new Date(),iso=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");f.d.min=iso;
+  function bad(el,m){el.setAttribute("aria-invalid","true");el.parentNode.querySelector(".err").textContent=m;return 1}
+  f.addEventListener("submit",function(e){e.preventDefault();var er=0;[f.n,f.e,f.d].forEach(function(el){el.removeAttribute("aria-invalid");el.parentNode.querySelector(".err").textContent=""});
+    if(f.n.value.trim().length<2)er+=bad(f.n,"Please enter your name.");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.e.value))er+=bad(f.e,"Enter a valid email.");
+    if(!f.d.value||f.d.value<iso)er+=bad(f.d,"Choose today or a later date.");if(er)return;
+    document.getElementById("okt").textContent="Thank you, "+f.n.value.trim()+". A free trial ("+f.p.value+") on "+f.d.value+" would have been requested.";
+    f.style.display="none";var ok=document.getElementById("ok");ok.classList.add("show");ok.scrollIntoView({behavior:"smooth",block:"center"})});
+  var nav=document.getElementById("nav"),bg=document.getElementById("bg");bg.onclick=function(){var o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")nav.classList.remove("open")});
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

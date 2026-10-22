@@ -1,0 +1,299 @@
+{% raw %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paseda Adeolu Praise | Cybersecurity, Networking & Full-Stack Development</title>
+<meta name="description" content="Portfolio of Paseda Adeolu Praise: cybersecurity analyst, network engineer and full-stack web developer.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Libre+Baskerville:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f3efe6;--bg2:#e9e4d8;--card:#faf7f0;--text:#161412;--muted:#5a554c;--bronze:#161412;--gold:#3a3631;--line:#c9c2b2;--onacc:#f3efe6;--ok:#4a453d;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){color-scheme:dark;--bg:#121110;--bg2:#1a1816;--card:#201e1b;--text:#efeae0;--muted:#a59e90;--bronze:#efeae0;--gold:#cfc8b8;--line:#3a3632;--onacc:#121110;--ok:#cfc8b8}
+}
+:root[data-theme="light"]{color-scheme:light;--bg:#f3efe6;--bg2:#e9e4d8;--card:#faf7f0;--text:#161412;--muted:#5a554c;--bronze:#161412;--gold:#3a3631;--line:#c9c2b2;--onacc:#f3efe6;--ok:#4a453d}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#121110;--bg2:#1a1816;--card:#201e1b;--text:#efeae0;--muted:#a59e90;--bronze:#efeae0;--gold:#cfc8b8;--line:#3a3632;--onacc:#121110;--ok:#cfc8b8}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 "Libre Baskerville",Georgia,"Times New Roman",serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;line-height:1.12;margin:0}
+a{color:var(--bronze)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font:700 17px "Space Grotesk",sans-serif}
+.logo b{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--bronze));color:var(--onacc);display:grid;place-items:center;font-size:15px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:14px;color:var(--muted);transition:color .2s}nav a:hover{color:var(--gold)}
+.ic{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 11px;cursor:pointer;font-size:16px}
+#burger{display:none}
+@media(max-width:860px){#burger{display:block}nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:18px 20px;border-bottom:1px solid var(--line);display:none}nav.open{display:flex}}
+.btn{display:inline-block;border:0;cursor:pointer;font:500 15px Inter,sans-serif;padding:13px 26px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--bronze));color:var(--onacc);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px var(--bronze)}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text)}.btn.ghost:hover{border-color:var(--gold);box-shadow:none}
+.hero{position:relative;overflow:hidden;padding:84px 0 90px;background:linear-gradient(180deg,color-mix(in srgb,var(--bronze) 10%,var(--bg)),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.tag{color:var(--gold);font:400 13px "JetBrains Mono",monospace;letter-spacing:.06em}
+.hero h1{font-size:clamp(38px,6.6vw,70px);margin:14px 0 8px}
+.hero h1 span{background:linear-gradient(120deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{color:var(--muted);font-size:17px;margin:0 0 14px}
+.hero p.lead{max-width:540px;color:var(--muted);margin:0 0 28px}
+.term{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px #000;animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.term .tb{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid var(--line)}.term .tb i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.term pre{margin:0;padding:18px;font:400 13.5px/1.8 "JetBrains Mono",monospace;color:var(--muted);min-height:180px;white-space:pre-wrap}
+.term pre b{color:var(--gold);font-weight:400}.term pre u{color:var(--ok);text-decoration:none}
+.caret{display:inline-block;width:8px;height:15px;background:var(--gold);vertical-align:-2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:56px}}
+section{padding:84px 0;border-top:1px solid var(--line)}
+.head{margin-bottom:38px}.head h2{font-size:clamp(28px,4.4vw,42px);margin-top:8px}.head p{color:var(--muted);max-width:620px;margin:10px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--bronze)}
+.card h3{font-size:20px;margin-bottom:8px}.card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.card ul{margin:0 0 16px;padding-left:18px;color:var(--muted);font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{font-size:12px;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.proj .pv{height:150px;display:grid;place-items:center;font-size:56px;transition:font-size .4s}.proj:hover .pv{font-size:68px}
+.proj .pb{padding:22px;display:flex;flex-direction:column;flex:1}.proj .pb .chips{margin-bottom:16px}
+.proj .row{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:14px}
+.st{font-size:12px;padding:3px 10px;border-radius:99px;margin-bottom:10px;align-self:flex-start;border:1px solid var(--ok);color:var(--ok)}
+.st.wip{border-color:var(--line);color:var(--muted)}
+.proj.wip .pv{filter:saturate(.3);opacity:.7}
+.ev{width:100%;border-collapse:collapse;font-size:14.5px}
+.ev th,.ev td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ev th{font:500 12px Inter,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.lab{font-size:12px;padding:3px 10px;border-radius:99px;white-space:nowrap;display:inline-block}
+.l1{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}.l2{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}.l3{background:var(--bg2);color:var(--muted)}
+.evw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:6px}
+.ev td:first-child{font-weight:500;white-space:nowrap}
+.tl{border-left:1px solid var(--line);margin-left:6px}.tl div{padding:0 0 26px 24px;position:relative}
+.tl div::before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.tl small{color:var(--muted);font:400 12.5px "JetBrains Mono",monospace}.tl b{display:block;font:500 17px "Space Grotesk",sans-serif}.tl span{color:var(--muted);font-size:15px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:34px}.about p{color:var(--muted);margin:0 0 14px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:660px}form .f{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:16px Inter,sans-serif}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.err{color:#ff8a6b;font-size:12.5px;display:block;min-height:0;margin-top:4px}
+input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#ff8a6b}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 26px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.btn{font-weight:600}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;animation:drift 12s ease-in-out infinite;pointer-events:none}
+.b1{width:380px;height:380px;background:var(--gold);top:-130px;left:-90px}.b2{width:340px;height:340px;background:var(--bronze);top:18%;right:-90px;animation-delay:-4s}.b3{width:260px;height:260px;background:var(--ok);bottom:-110px;left:42%;animation-delay:-8s}
+@keyframes drift{50%{transform:translate(40px,30px) scale(1.12)}}
+.hero .wrap{position:relative;z-index:1}
+.hero h1 span{background:linear-gradient(90deg,var(--gold),var(--bronze),var(--ok),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 6s linear infinite}
+@keyframes shift{to{background-position:200% center}}
+.wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.2s ease-in-out infinite}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+.hero .btn:first-of-type{animation:ring 2.4s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--bronze) 55%,transparent)}100%{box-shadow:0 0 0 18px transparent}}
+.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:15px 0}
+.marq div{display:flex;gap:40px;width:max-content;animation:mq 30s linear infinite;font:500 15px "Space Grotesk",sans-serif;color:var(--muted)}
+.marq span::before{content:"✦";color:var(--gold);margin-right:14px}
+@keyframes mq{to{transform:translateX(-50%)}}
+#sp{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--bronze),var(--ok));z-index:70}
+.card:hover{box-shadow:0 22px 40px -22px color-mix(in srgb,var(--bronze) 65%,transparent)}
+.grid>.rv:nth-child(2){transition-delay:.12s}.grid>.rv:nth-child(3){transition-delay:.24s}.grid>.rv:nth-child(4){transition-delay:.1s}.grid>.rv:nth-child(5){transition-delay:.22s}.grid>.rv:nth-child(6){transition-delay:.34s}
+section:nth-of-type(even){background:var(--bg2)}
+.term{background:#15112f;border-color:#2f2866}.term pre{color:#cbc6ee}.term pre b{color:#ff8a95}.term pre u{color:#2de2c4}.caret{background:#ff8a95}
+.term .tb i:nth-child(1){background:#ff6b6b}.term .tb i:nth-child(2){background:#ffd166}.term .tb i:nth-child(3){background:#2de2c4}
+.tag{color:var(--gold)}
+.blob{display:none}
+.hero{background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.logo,.tl b,.marq div{font-family:"Playfair Display",Georgia,serif}
+.tag,.tl small,.term pre{font-family:"Special Elite","Courier New",monospace}
+.btn,input,select,textarea,.st,.lab,.chips span,.ev th{font-family:"Libre Baskerville",Georgia,serif}
+.tag{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted)}
+.hero h1{font-weight:700;letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(90deg,var(--text),var(--muted),var(--text));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-style:italic}
+.btn{border-radius:0;border:2px solid var(--text);background:var(--text);color:var(--bg);letter-spacing:.08em;text-transform:uppercase;font-size:13px;box-shadow:4px 4px 0 var(--line)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--muted)}
+.btn.ghost{background:transparent;color:var(--text);border:2px solid var(--text)}
+.card,.evw,.term,.ic,input,select,textarea,.chips span,.st,.lab{border-radius:0}
+.card{border:2px solid var(--text);box-shadow:6px 6px 0 var(--line)}
+.card:hover{border-color:var(--text);box-shadow:9px 9px 0 var(--muted);transform:translate(-3px,-3px)}
+.evw{border:2px solid var(--text)}.ev th{border-bottom:2px solid var(--text)}
+.chips span{border-color:var(--muted)}
+.head h2{padding-bottom:14px;border-bottom:3px double var(--text)}
+.logo b{border-radius:0;background:var(--text);color:var(--bg);font-family:"Playfair Display",serif}
+.proj .pv{filter:grayscale(1) contrast(1.15);border-bottom:2px solid var(--text)}
+.wave{filter:grayscale(1)}
+.marq{background:var(--text);border:0}.marq div{color:var(--bg)}.marq span::before{color:var(--bg)}
+#sp{background:var(--text)}
+.tl div::before{background:var(--text);border-radius:0;transform:rotate(45deg)}
+.term{background:#141210;border:2px solid var(--text);box-shadow:8px 8px 0 var(--line)}
+.term pre{color:#e9e3d6}.term pre b{color:#fff}.term pre u{color:#bdb6a6}.caret{background:#fff}
+.term .tb{border-color:#33302b}.term .tb i:nth-child(n){background:#5a554c}
+.cert{display:inline-flex;align-items:center;gap:10px;margin:6px 0 8px;padding:12px 18px;background:var(--card);color:var(--text);border:2px solid var(--text);box-shadow:5px 5px 0 var(--line);cursor:pointer;font:600 14px "Libre Baskerville",Georgia,serif;letter-spacing:.04em;transition:transform .25s,box-shadow .25s}.cert-label::before{content:"🎓 ";filter:grayscale(1)}
+.cert:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--muted)}
+.cert img{display:none}.cert-cap{font-size:13px;color:var(--muted);margin:0 0 14px}
+dialog.lb[open]{animation:lbin .35s ease both}@keyframes lbin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+dialog.lb{border:2px solid var(--text);padding:10px;background:var(--card);color:var(--text);max-width:min(92vw,640px);max-height:94vh;overflow:auto}
+dialog.lb::backdrop{background:rgba(0,0,0,.82)}dialog.lb img{display:block;width:100%;height:auto}dialog.lb button{margin-top:10px}
+[hidden]{display:none!important}
+.rsm{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;align-items:center}.rsm h3{font-size:24px}.rr{font-style:italic;color:var(--muted);margin:0 0 10px!important}
+.ra{display:flex;flex-direction:column;gap:12px;align-items:flex-start}@media(max-width:760px){.rsm{grid-template-columns:1fr}}
+dialog.rd{max-width:min(94vw,780px)}dialog.rd img{margin-bottom:10px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div id="sp"></div>
+<header><div class="bar">
+  <a class="logo" href="#top"><b>PA</b>Paseda Adeolu</a>
+  <nav id="nav"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#proof">Proof of skills</a><a href="#experience">Experience</a><a href="#resume">Résumé</a><a href="#contact">Contact</a></nav>
+  <div style="display:flex;gap:8px"><button class="ic" id="theme" aria-label="Switch light or dark theme">◐</button><button class="ic" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="wrap">
+  <div>
+    <div class="tag">Hello <span class="wave">👋</span> welcome, I’m</div>
+    <h1><span>Paseda Adeolu Praise</span></h1>
+    <p class="role">Cybersecurity Analyst · Network Engineer · Full-Stack Web Developer</p>
+    <p class="lead">Welcome! I build friendly, fast websites, set up reliable networks and learn how to keep both safe. Take a look around and see the evidence behind every skill.</p>
+    <a class="btn" href="#work">Explore my projects</a> <a class="btn ghost" href="#proof">View technical evidence</a> <a class="btn ghost" href="#contact">Contact me</a>
+  </div>
+  <div class="term" aria-hidden="true"><div class="tb"><i></i><i></i><i></i></div><pre id="tp"></pre></div>
+</div></div>
+
+<div class="marq" aria-hidden="true"><div><span>Cybersecurity</span><span>Networking</span><span>Full-Stack Development</span><span>Python</span><span>JavaScript</span><span>Flask</span><span>Django</span><span>Linux</span><span>Responsive Design</span><span>Website Redesign</span><span>Cybersecurity</span><span>Networking</span><span>Full-Stack Development</span><span>Python</span><span>JavaScript</span><span>Flask</span><span>Django</span><span>Linux</span><span>Responsive Design</span><span>Website Redesign</span></div></div>
+<section id="about"><div class="wrap">
+  <div class="head rv"><div class="tag">01 / about</div><h2>Software, networks and security in one toolkit</h2></div>
+  <div class="about rv">
+    <div>
+      <p>I hold a B.Sc. in Computer Science from Joseph Ayo Babalola University (2024). My path started with installing and configuring networks, moved into web development, and now centres on cybersecurity, where I am training toward security operations and network security work.</p>
+      <p>I like understanding how a system is built, how it can fail and how to make it safer. That is why I work across all three areas: each one makes me better at the others.</p>
+    </div>
+    <div class="card"><h3>Currently</h3><ul><li>Cybersecurity internship at Buidl</li><li>Building client-style websites</li><li>Learning: network security</li><li>Seeking entry-level cybersecurity, SOC, network security and IT support roles</li></ul></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="head rv"><div class="tag">02 / services</div><h2>How I can help</h2></div>
+  <div class="grid">
+    <div class="card rv"><h3>Cybersecurity</h3><ul><li>Defensive security support</li><li>Basic security reviews and hardening guidance</li><li>Security documentation and lab write-ups</li></ul><a class="btn ghost" href="#contact" data-topic="Cybersecurity">Enquire</a></div>
+    <div class="card rv"><h3>Networking &amp; IT support</h3><ul><li>Network installation and configuration</li><li>IP setup and connectivity troubleshooting</li><li>Infrastructure documentation</li></ul><a class="btn ghost" href="#contact" data-topic="Networking">Enquire</a></div>
+    <div class="card rv"><h3>Full-stack web development</h3><ul><li>Business websites and landing pages</li><li>Responsive front end, backend and database</li><li>Redesign, maintenance and deployment help</li></ul><a class="btn ghost" href="#contact" data-topic="Web development">Enquire</a></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="head rv"><div class="tag">03 / featured work</div><h2>Websites I’ve designed and built</h2><p>Each project has its own look, layout and working features. Open the live pages to try them.</p></div>
+  <div class="grid">
+    {% endraw %}{% for p in projects %}
+    <article class="card proj{% if p.status != 'Live' %} wip{% endif %} rv"><div class="pv" style="background:var(--bg2)">{{ p.emoji }}</div><div class="pb"><span class="st{% if p.status != 'Live' %} wip{% endif %}">{{ p.status }}</span><h3>{{ p.title }}</h3><p>{{ p.description }}</p><div class="chips">{% for x in p.tech.split(',') if x.strip() %}<span>{{ x.strip() }}</span>{% endfor %}</div><div class="row" style="margin-top:16px">{% if p.live_url %}<a class="btn" href="{{ p.live_url }}" target="_blank" rel="noopener">Live demo ↗</a>{% endif %}{% if p.source_url %}<a class="btn ghost" href="{{ p.source_url }}" target="_blank" rel="noopener">Source ↗</a>{% endif %}{% if not p.live_url and not p.source_url %}<span style="color:var(--muted)">Coming soon</span>{% endif %}</div></div></article>
+    {% endfor %}{% raw %}
+  </div>
+</div></section>
+
+<section id="proof"><div class="wrap">
+  <div class="head rv"><div class="tag">04 / proof of skills</div><h2>Skills, with evidence</h2><p>Every skill is labelled honestly. Where proof is not published yet, it says so.</p></div>
+  <div class="evw rv"><table class="ev">
+    <tr><th>Skill</th><th>Level</th><th>Evidence</th></tr>
+    <tr><td>HTML &amp; CSS</td><td><span class="lab l1">Demonstrated in projects</span></td><td>Responsive layouts: <a href="/demos/restaurant" target="_blank" rel="noopener">restaurant</a>, <a href="/demos/pharmacy" target="_blank" rel="noopener">pharmacy</a>, <a href="/demos/hotel" target="_blank" rel="noopener">hotel</a>, <a href="/demos/realestate" target="_blank" rel="noopener">real estate</a>, <a href="/demos/barbershop" target="_blank" rel="noopener">barbershop</a>, <a href="/demos/gym" target="_blank" rel="noopener">gym</a></td></tr>
+    <tr><td>JavaScript</td><td><span class="lab l1">Demonstrated in projects</span></td><td>Menu tabs, service search, property and room filters, calculators, booking logic and form validation across the six live sites</td></tr>
+    <tr><td>Python (Flask, Django)</td><td><span class="lab l2">Working knowledge</span></td><td>Client and church website builds; public source and case study pending</td></tr>
+    <tr><td>Databases &amp; APIs</td><td><span class="lab l2">Working knowledge</span></td><td>Used in Flask and Django builds; public demo pending</td></tr>
+    <tr><td>Cybersecurity</td><td><span class="lab l2">Certified foundations</span></td><td><a href="https://hackviser.com/verify?id=HV-CORE-W1LKWO9D" target="_blank" rel="noopener">Certified Cybersecurity Foundations (CORE), Hackviser (issued Oct 6, 2026): verify</a></td></tr>
+    <tr><td>Networking</td><td><span class="lab l2">Working knowledge</span></td><td>Packet Tracer lab documentation in progress</td></tr>
+    <tr><td>Linux / Kali</td><td><span class="lab l2">Intermediate</span></td><td>Hands-on Kali Linux and command-line work; lab write-ups coming to GitHub</td></tr>
+    <tr><td>Git &amp; GitHub</td><td><span class="lab l2">Working knowledge</span></td><td><a href="https://github.com/pasedaadeolu" target="_blank" rel="noopener">github.com/pasedaadeolu</a></td></tr>
+  </table></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="head rv"><div class="tag">05 / experience &amp; credentials</div><h2>Where I’ve worked and trained</h2></div>
+  <div class="grid">
+    <div class="rv"><div class="tl">
+      <div><small>Jul 2026 – present</small><b>Cybersecurity Intern, Buidl</b><span>Ongoing cybersecurity internship building practical security skills.</span></div>
+      <div><small>Dec 2024 – Aug 2025</small><b>Cybersecurity Trainee / Intern, Voks Technology</b><span>Cybersecurity principles, network security and security best practices. Akure, Nigeria.</span></div>
+      <div><small>Late 2023 – Early 2024</small><b>Web Development Intern, Voks Technology</b><span>Built and styled pages with HTML and CSS, added JavaScript features and debugged sites in VS Code.</span></div>
+      <div><small>Late 2022 – Mid 2023</small><b>Network Engineer / Installer Intern, IP-Express Ltd</b><span>Network installation, setup, troubleshooting and cabling in Ibadan, Nigeria.</span></div>
+    </div></div>
+    <div class="card rv"><h3>Education &amp; certifications</h3><ul><li>B.Sc. Computer Science, Joseph Ayo Babalola University (2024)</li><li>Certified Cybersecurity Foundations (CORE), Hackviser: issued October 6, 2026 · ID HV-CORE-W1LKWO9D</li><li>Certified Website Developer, Voks Institute (3-month programme) · Certificate No. WB2810232</li></ul><button class="cert" type="button" aria-label="View B.Sc. degree certificate"><span class="cert-label">View B.Sc. certificate</span><img src="/static/degree-certificate.jpg" alt="Bachelor of Science in Computer Science certificate, Joseph Ayo Babalola University, 24 October 2024" loading="lazy"></button><p class="cert-cap">Click to view my degree certificate.</p><a href="https://hackviser.com/verify?id=HV-CORE-W1LKWO9D" target="_blank" rel="noopener">Verify Hackviser certificate ↗</a></div>
+  </div>
+</div></section>
+
+<section id="resume"><div class="wrap">
+  <div class="head rv"><div class="tag">06 / résumé</div><h2>My résumé</h2><p>A summary of my training, experience and certificates.</p></div>
+  <div class="card rsm rv"><div><h3>Paseda Adeolu Praise</h3><p class="rr">Cybersecurity · Networking · Web Development · ICT Support</p>
+    <p>Computer Science graduate and certified website developer with experience across cybersecurity training, networking, web development and ICT support, currently completing a cybersecurity internship. Seeking entry-level roles in cybersecurity analysis, SOC, network security or IT support.</p>
+    <div class="chips"><span>B.Sc. Computer Science (2024)</span><span>Hackviser CORE</span><span>Certified Website Developer</span></div></div>
+  <div class="ra"><button class="btn" id="rview" type="button">View résumé</button><a class="btn ghost" href="/static/Paseda_Adeolu_Praise_Cybersecurity_CV.pdf" download>Download PDF</a><p class="cert-cap">PDF, 2 pages, with copies of my certificates.</p></div></div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <div class="head rv"><div class="tag">07 / contact</div><h2>Let’s work together</h2><p>Open to cybersecurity, network and web development roles, remote contracts and website projects.</p></div>
+  <div class="links rv"><a class="btn ghost" href="mailto:praiseadeoluadebobo@gmail.com">praiseadeoluadebobo@gmail.com</a><a class="btn ghost" href="https://linkedin.com/in/pasedaadeolu" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn ghost" href="https://github.com/pasedaadeolu" target="_blank" rel="noopener">GitHub ↗</a></div>
+  <form id="cf" novalidate class="rv">
+    <div><label for="n">Name</label><input id="n" autocomplete="name"><span class="err"></span></div>
+    <div><label for="e">Your email</label><input id="e" type="email" autocomplete="email"><span class="err"></span></div>
+    <div class="f"><label for="t">Topic</label><select id="t"><option>General</option><option>Cybersecurity</option><option>Networking</option><option>Web development</option></select></div>
+    <div class="f"><label for="m">Message</label><textarea id="m" rows="4"></textarea><span class="err"></span></div>
+    <input id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><div class="f"><button class="btn" type="submit">Send message</button><p id="fs" role="status" style="font-size:14px;color:var(--muted)">Your message goes straight to my inbox.</p></div>
+  </form>
+</div></section>
+</main>
+<dialog class="lb" id="lb" aria-label="Degree certificate"><img id="lbi" alt=""><button class="btn ghost" id="lbx" type="button">Close</button></dialog>
+<dialog class="lb rd" id="rd" aria-label="Résumé"><img src="/static/resume-page-1.jpg" alt="Résumé, page 1" loading="lazy"><img src="/static/resume-page-2.jpg" alt="Résumé, page 2: copies of certificates" loading="lazy"><button class="btn ghost" id="rdx" type="button">Close</button></dialog>
+<footer><div class="wrap">© 2026 Paseda Adeolu Praise · Thanks for visiting ✦</div></footer>
+
+<script>
+(function(){
+  var L=[["<b>$</b> whoami","paseda — security · networks · web"],["<b>$</b> ls skills/","<u>cybersecurity/</u>  <u>networking/</u>  <u>fullstack/</u>"],["<b>$</b> ls projects/","restaurant  pharmacy  hotel  realty  barber  gym"],["<b>$</b> open contact","<u>ready</u> for new work"]];
+  var tp=document.getElementById("tp"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function plain(h){return h}
+  if(rm){tp.innerHTML=L.map(function(l){return l.join("\n")}).join("\n\n")}
+  else{var i=0,html="";(function step(){if(i>=L.length){tp.innerHTML=html+'<span class="caret"></span>';return}
+    html+=L[i].join("\n")+"\n\n";tp.innerHTML=html+'<span class="caret"></span>';i++;setTimeout(step,900)})()}
+  var nav=document.getElementById("nav"),bg=document.getElementById("burger");
+  bg.onclick=function(){var o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")nav.classList.remove("open")});
+  var root=document.documentElement;
+  document.getElementById("theme").onclick=function(){var cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");root.setAttribute("data-theme",cur==="dark"?"light":"dark")};
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+  var rd=document.getElementById("rd");
+  document.getElementById("rview").onclick=function(){rd.showModal()};
+  document.getElementById("rdx").onclick=function(){rd.close()};
+  rd.addEventListener("click",function(e){if(e.target===rd)rd.close()});
+  var lb=document.getElementById("lb");
+  document.querySelectorAll(".cert").forEach(function(b){b.onclick=function(){var i=b.querySelector("img"),o=document.getElementById("lbi");o.src=i.src;o.alt=i.alt;lb.showModal()}});
+  document.getElementById("lbx").onclick=function(){lb.close()};
+  lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+  var sp=document.getElementById("sp");
+  addEventListener("scroll",function(){var h=document.documentElement.scrollHeight-innerHeight;sp.style.width=(h>0?scrollY/h*100:0)+"%"},{passive:true});
+  var cf=document.getElementById("cf");
+  document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){cf.t.value=a.dataset.topic})});
+  function bad(el,m){el.setAttribute("aria-invalid","true");el.parentNode.querySelector(".err").textContent=m;return 1}
+  cf.addEventListener("submit",function(ev){ev.preventDefault();var er=0;
+    [cf.n,cf.e,cf.m].forEach(function(el){el.removeAttribute("aria-invalid");el.parentNode.querySelector(".err").textContent=""});
+    if(cf.n.value.trim().length<2)er+=bad(cf.n,"Please enter your name.");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cf.e.value))er+=bad(cf.e,"Enter a valid email address.");
+    if(cf.m.value.trim().length<10)er+=bad(cf.m,"Please write at least 10 characters.");
+    if(er)return;
+    var btn=cf.querySelector("button"),fs=document.getElementById("fs");btn.disabled=true;fs.textContent="Sending…";
+    fetch("/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:cf.n.value.trim(),email:cf.e.value.trim(),topic:cf.t.value,message:cf.m.value.trim(),website:document.getElementById("hp").value})})
+    .then(function(r){return r.json().then(function(j){return[r.ok,j]})})
+    .then(function(x){btn.disabled=false;if(x[0]){fs.textContent="Thank you! Your message has been sent.";cf.reset()}else{fs.textContent=(x[1]&&x[1].error)||"Please check the form and try again."}})
+    .catch(function(){btn.disabled=false;fs.textContent="Could not send. Please email me directly."});
+  });
+})();
+</script>
+</body>
+</html>
+{% endraw %}

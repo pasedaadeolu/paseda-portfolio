@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Havenridge Realty | Find a place that feels like home</title>
+<meta name="description" content="Havenridge Realty: a real estate website designed and built by Paseda Adeolu Praise.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#fbf7f1;--bg2:#f1e9dc;--card:#fff;--text:#1f2a24;--muted:#5f6b63;--acc:#c8552b;--grn:#2f6f5e;--line:#e5dac8;--on:#fff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0f1512;--bg2:#141d18;--card:#18221c;--text:#eef3ee;--muted:#a3b2a8;--acc:#ef7f55;--grn:#5fc4a6;--line:#2a3a31;--on:#10150f}}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+.demo{background:var(--grn);color:#fff;text-align:center;font-size:13px;padding:6px 12px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:1120px;margin:0 auto;padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font:700 22px Fraunces,serif;text-decoration:none}.logo i{color:var(--acc);font-style:normal}
+nav{display:flex;gap:24px;align-items:center}nav a{text-decoration:none;font-size:14px;color:var(--muted);font-weight:500}nav a:hover{color:var(--acc)}
+.sv{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:13px;font-weight:700}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 15px "DM Sans",sans-serif;padding:13px 26px;border-radius:12px;background:var(--acc);color:var(--on);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -10px var(--acc)}.btn.g{background:var(--grn);color:#fff}
+#bg{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:18px}
+@media(max-width:820px){#bg{display:block}nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:18px 20px;border-bottom:1px solid var(--line);display:none}nav.open{display:flex}}
+.hero{position:relative;overflow:hidden;padding:84px 20px 110px;text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.fl{position:absolute;font-size:46px;opacity:.5;animation:fy 9s ease-in-out infinite}.fl:nth-child(1){left:8%;top:22%}.fl:nth-child(2){right:10%;top:16%;animation-delay:-3s}.fl:nth-child(3){left:18%;bottom:18%;animation-delay:-6s}.fl:nth-child(4){right:16%;bottom:22%;animation-delay:-2s}
+@keyframes fy{50%{transform:translateY(-18px) rotate(4deg)}}
+.hero .in{position:relative;max-width:760px;margin:0 auto}
+.eb{color:var(--acc);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(40px,7vw,76px);margin:14px 0}.hero h1 em{color:var(--acc);font-style:italic;background:linear-gradient(90deg,var(--acc),var(--grn),var(--acc));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200% center}}
+.hero p{color:var(--muted);font-size:18px;max-width:520px;margin:0 auto 28px}
+.sb{display:grid;grid-template-columns:1.4fr 1fr auto;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 24px 50px -28px #000;text-align:left}
+input,select,textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:16px "DM Sans",sans-serif}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--grn);outline-offset:2px}
+@media(max-width:680px){.sb{grid-template-columns:1fr}}
+section{padding:80px 20px}.wrap{max-width:1120px;margin:0 auto}
+.head{text-align:center;margin-bottom:34px}.head h2{font-size:clamp(30px,4.5vw,46px);margin-top:8px}.head p{color:var(--muted);margin:8px 0 0}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+.tabs button{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:10px 26px;border-radius:99px;font:700 14px "DM Sans",sans-serif;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--grn);color:#fff;border-color:var(--grn)}
+.fil{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}@media(max-width:720px){.fil{grid-template-columns:1fr 1fr}}
+.cnt{color:var(--muted);font-size:14px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.pr{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;animation:pop .5s both;transition:transform .3s,box-shadow .3s}
+.pr:hover{transform:translateY(-6px);box-shadow:0 26px 40px -26px #000}
+.art{height:160px;display:grid;place-items:center;font-size:64px;position:relative;transition:font-size .4s}.pr:hover .art{font-size:76px}
+.bd{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.hs{position:absolute;right:12px;top:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:18px;cursor:pointer;transition:transform .2s}.hs:hover{transform:scale(1.15)}.hs[aria-pressed="true"]{background:var(--acc)}
+.pb{padding:16px}.pb h3{font-size:19px}.pb .ar{color:var(--muted);font-size:14px;margin:2px 0 10px}.pb .pc{font:700 22px Fraunces,serif;color:var(--acc)}.pb .pc small{font:500 13px "DM Sans";color:var(--muted)}
+.sp{display:flex;gap:14px;color:var(--muted);font-size:13.5px;margin-top:8px;border-top:1px dashed var(--line);padding-top:10px}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+#em{display:none;text-align:center;color:var(--muted);padding:30px}
+.band{background:var(--bg2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}@media(max-width:760px){.two{grid-template-columns:1fr}}
+.cd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fg .f{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--muted);margin:0 0 5px;font-weight:500}
+.err{color:#d6402b;font-size:12.5px;display:block}input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#d6402b}
+.res{margin-top:14px;background:var(--bg2);border-radius:12px;padding:16px;display:none}.res b{font:700 32px Fraunces,serif;color:var(--grn);display:block}
+.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.ag .cd{text-align:center}.av{width:64px;height:64px;border-radius:50%;background:var(--grn);color:#fff;display:grid;place-items:center;font:700 22px Fraunces,serif;margin:0 auto 10px}
+#ok{display:none;text-align:center}#ok.show{display:block;animation:pop .5s both}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);font-size:14px}footer a{color:var(--acc)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Portfolio project by Paseda Adeolu Praise · listings, calculator and forms are for demonstration</div>
+<header><div class="bar"><a class="logo" href="#top">Haven<i>ridge</i></a>
+  <nav id="nav"><a href="#listings">Listings</a><a href="#tools">Mortgage</a><a href="#team">Agents</a><a href="#viewing">Book a viewing</a></nav>
+  <div style="display:flex;gap:8px;align-items:center"><span class="sv" id="sv">♥ Saved 0</span><button id="bg" aria-label="Toggle menu" aria-expanded="false">☰</button></div></div></header>
+
+<main id="top">
+<div class="hero"><span class="fl" aria-hidden="true">🏡</span><span class="fl" aria-hidden="true">🏢</span><span class="fl" aria-hidden="true">🌳</span><span class="fl" aria-hidden="true">🔑</span>
+  <div class="in"><div class="eb">Homes · Apartments · Villas</div>
+    <h1>Find a place that feels like <em>home</em></h1>
+    <p>Browse homes to buy or rent, estimate your monthly payment and book a viewing in a few clicks.</p>
+    <form class="sb" id="hs" aria-label="Quick search"><input id="hq" placeholder="Area, e.g. Lakeside" aria-label="Area"><select id="ht" aria-label="Property type"><option value="">Any type</option><option>House</option><option>Apartment</option><option>Villa</option><option>Studio</option></select><button class="btn" type="submit">Search</button></form>
+  </div></div>
+
+<section id="listings"><div class="wrap">
+  <div class="head rv"><div class="eb">Featured properties</div><h2>Explore listings</h2><p>Filter by what matters to you. Tap the heart to save a property.</p></div>
+  <div class="tabs rv"><button data-m="Buy" aria-pressed="true">Buy</button><button data-m="Rent" aria-pressed="false">Rent</button></div>
+  <div class="fil rv"><div><label for="fa">Area</label><input id="fa" placeholder="Any area"></div><div><label for="ft">Type</label><select id="ft"><option value="">Any</option><option>House</option><option>Apartment</option><option>Villa</option><option>Studio</option></select></div>
+    <div><label for="fb">Bedrooms</label><select id="fb"><option value="0">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+    <div><label for="fp">Max price</label><select id="fp"></select></div></div>
+  <p class="cnt" id="cn" aria-live="polite"></p>
+  <div class="grid" id="gr"></div><p id="em">No properties match. Try widening your filters.</p>
+</div></section>
+
+<section id="tools" class="band"><div class="wrap two">
+  <div class="cd rv"><h3>Mortgage estimate</h3><p style="color:var(--muted);margin:6px 0 14px">An illustrative monthly payment. Not a loan offer.</p>
+    <form class="fg" id="mf" novalidate><div class="f"><label for="mp">Home price ($)</label><input id="mp" type="number" value="450000" min="1"><span class="err"></span></div>
+    <div><label for="md">Down payment (%)</label><input id="md" type="number" value="20" step="0.5"><span class="err"></span></div><div><label for="mr">Interest rate (%)</label><input id="mr" type="number" value="6.5" step="0.05"><span class="err"></span></div>
+    <div class="f"><label for="my">Term (years)</label><input id="my" type="number" value="30"><span class="err"></span></div><div class="f"><button class="btn g" type="submit">Calculate</button></div></form>
+    <div class="res" id="mres" aria-live="polite"></div></div>
+  <div class="cd rv"><h3>Why Havenridge</h3><ul style="color:var(--muted);padding-left:18px;margin:12px 0 0"><li>Clear pricing and honest property details</li><li>Viewings arranged around your schedule</li><li>Local agents who know each neighbourhood</li><li>Support from first search to closing day</li></ul></div>
+</div></section>
+
+<section id="team"><div class="wrap"><div class="head rv"><div class="eb">Our agents</div><h2>Meet the team</h2></div>
+  <div class="ag"><div class="cd rv"><div class="av">AO</div><h3>Amara Okoye</h3><p style="color:var(--muted);margin:4px 0 0">Sales · Lakeside &amp; Hillcrest</p></div><div class="cd rv"><div class="av">DR</div><h3>Daniel Reyes</h3><p style="color:var(--muted);margin:4px 0 0">Rentals · Downtown</p></div><div class="cd rv"><div class="av">SK</div><h3>Sofia Karim</h3><p style="color:var(--muted);margin:4px 0 0">Luxury · Villas</p></div></div></div></section>
+
+<section id="viewing" class="band"><div class="wrap" style="max-width:640px"><div class="head rv"><div class="eb">Viewings</div><h2>Book a viewing</h2></div>
+  <form class="cd fg rv" id="vf" novalidate><div><label for="vn">Name</label><input id="vn" autocomplete="name"><span class="err"></span></div><div><label for="ve">Email</label><input id="ve" type="email" autocomplete="email"><span class="err"></span></div>
+    <div class="f"><label for="vp">Property</label><select id="vp"></select></div><div class="f"><label for="vd">Preferred date</label><input id="vd" type="date"><span class="err"></span></div>
+    <div class="f"><button class="btn" type="submit" style="width:100%">Request viewing</button><p style="font-size:12px;color:var(--muted);text-align:center;margin:8px 0 0">Demo form: nothing is sent or stored.</p></div></form>
+  <div class="cd" id="ok" role="status"><h3 style="font-size:30px;color:var(--grn)">Demo request received</h3><p id="okt" style="color:var(--muted)"></p><p style="font-size:13px;color:var(--muted)">No viewing was booked and no data left your browser.</p></div>
+</div></section>
+</main>
+<footer>© 2026 Havenridge Realty. Designed &amp; built by Paseda Adeolu Praise · <a href="https://linkedin.com/in/pasedaadeolu" target="_blank" rel="noopener">LinkedIn</a></footer>
+
+<script>
+(function(){
+  var L=[["Maple Court Family Home","Lakeside","House","Buy",485000,4,3,2400,"🏡","#f2c9a8,#c8552b"],["Skyline Penthouse","Downtown","Apartment","Buy",720000,3,2,1850,"🌆","#a8c4e8,#2f4f8a"],["Willow Garden Villa","Hillcrest","Villa","Buy",1250000,5,4,4100,"🏖️","#b9e0c8,#2f6f5e"],["Cedar Row Townhouse","Eastgate","House","Buy",365000,3,2,1700,"🏘️","#e6d3a8,#8a6a2f"],
+  ["Harbor View Apartment","Downtown","Apartment","Rent",2400,2,2,1100,"🌇","#d4b8e8,#6a3f8a"],["Studio Loft","Arts District","Studio","Rent",1450,1,1,560,"🎨","#f0b8c4,#b0405a"],["Parkside Duplex","Lakeside","House","Rent",2950,3,2,1650,"🌳","#b8e0e0,#2f7a7a"],["Garden Flat","Hillcrest","Apartment","Rent",1900,2,1,900,"🌷","#e8d0b8,#a8602f"]];
+  var mode="Buy",saved={},gr=document.getElementById("gr"),fp=document.getElementById("fp");
+  function money(n){return "$"+n.toLocaleString("en-US")}
+  function ranges(){var r=mode==="Buy"?[[0,"Any"],[400000,"Up to $400k"],[600000,"Up to $600k"],[800000,"Up to $800k"],[1500000,"Up to $1.5M"]]:[[0,"Any"],[1500,"Up to $1,500"],[2000,"Up to $2,000"],[3000,"Up to $3,000"]];
+    fp.innerHTML=r.map(function(x){return '<option value="'+x[0]+'">'+x[1]+'</option>'}).join("")}
+  function draw(){
+    var a=document.getElementById("fa").value.trim().toLowerCase(),t=document.getElementById("ft").value,b=+document.getElementById("fb").value,p=+fp.value;
+    var rows=L.map(function(x,i){return{x:x,i:i}}).filter(function(o){var x=o.x;return x[3]===mode&&(!a||x[1].toLowerCase().indexOf(a)>-1)&&(!t||x[2]===t)&&x[5]>=b&&(!p||x[4]<=p)});
+    document.getElementById("cn").textContent=rows.length+" propert"+(rows.length===1?"y":"ies")+" available to "+mode.toLowerCase();
+    document.getElementById("em").style.display=rows.length?"none":"block";
+    gr.innerHTML=rows.map(function(o,k){var x=o.x,c=x[9].split(",");
+      return '<article class="pr" style="animation-delay:'+k*70+'ms"><div class="art" style="background:linear-gradient(135deg,'+c[0]+','+c[1]+')" aria-hidden="true">'+x[8]+'<span class="bd">For '+(mode==="Buy"?"sale":"rent")+'</span><button class="hs" data-i="'+o.i+'" aria-pressed="'+(!!saved[o.i])+'" aria-label="Save '+x[0]+'">'+(saved[o.i]?"♥":"♡")+'</button></div><div class="pb"><h3>'+x[0]+'</h3><div class="ar">'+x[1]+' · '+x[2]+'</div><div class="pc">'+money(x[4])+(mode==="Rent"?'<small> /month</small>':'')+'</div><div class="sp"><span>🛏 '+x[5]+'</span><span>🛁 '+x[6]+'</span><span>📐 '+x[7].toLocaleString("en-US")+' sq ft</span></div></div></article>'}).join("");
+  }
+  gr.addEventListener("click",function(e){var h=e.target.closest(".hs");if(!h)return;var i=h.dataset.i;saved[i]=!saved[i];document.getElementById("sv").textContent="♥ Saved "+Object.keys(saved).filter(function(k){return saved[k]}).length;draw()});
+  document.querySelectorAll(".tabs button").forEach(function(b){b.onclick=function(){mode=b.dataset.m;document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});ranges();draw()}});
+  ["fa","ft","fb","fp"].forEach(function(id){document.getElementById(id).addEventListener("input",draw)});
+  ranges();draw();
+  document.getElementById("hs").addEventListener("submit",function(e){e.preventDefault();document.getElementById("fa").value=document.getElementById("hq").value;document.getElementById("ft").value=document.getElementById("ht").value;draw();document.getElementById("listings").scrollIntoView({behavior:"smooth"})});
+  document.getElementById("vp").innerHTML=L.map(function(x){return "<option>"+x[0]+" ("+x[1]+")</option>"}).join("");
+
+  function bad(el,m){el.setAttribute("aria-invalid","true");el.parentNode.querySelector(".err").textContent=m;return 1}
+  function clr(a){a.forEach(function(el){el.removeAttribute("aria-invalid");var s=el.parentNode.querySelector(".err");if(s)s.textContent=""})}
+  var mf=document.getElementById("mf");
+  mf.addEventListener("submit",function(e){e.preventDefault();var P=mf.mp,D=mf.md,R=mf.mr,Y=mf.my,er=0;clr([P,D,R,Y]);
+    if(!(+P.value>0))er+=bad(P,"Enter a price above 0.");if(!(D.value!==""&&+D.value>=0&&+D.value<=90))er+=bad(D,"Enter 0 to 90.");
+    if(!(R.value!==""&&+R.value>=0&&+R.value<=25))er+=bad(R,"Enter 0 to 25.");if(!(+Y.value>=1&&+Y.value<=40))er+=bad(Y,"Enter 1 to 40.");
+    var o=document.getElementById("mres");if(er){o.style.display="none";return}
+    var loan=P.value*(1-D.value/100),n=Y.value*12,r=R.value/100/12,m=r?loan*r/(1-Math.pow(1+r,-n)):loan/n;
+    o.innerHTML="";var b=document.createElement("b");b.textContent=money(Math.round(m))+" / month";
+    var s=document.createElement("span");s.textContent="Loan "+money(Math.round(loan))+" over "+Y.value+" years. Total interest about "+money(Math.max(0,Math.round(m*n-loan)))+".";
+    o.append(b,s);o.style.display="block"});
+  var vf=document.getElementById("vf"),t=new Date(),iso=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");vf.vd.min=iso;
+  vf.addEventListener("submit",function(e){e.preventDefault();var er=0;clr([vf.vn,vf.ve,vf.vd]);
+    if(vf.vn.value.trim().length<2)er+=bad(vf.vn,"Please enter your name.");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vf.ve.value))er+=bad(vf.ve,"Enter a valid email.");
+    if(!vf.vd.value||vf.vd.value<iso)er+=bad(vf.vd,"Choose today or a later date.");if(er)return;
+    document.getElementById("okt").textContent="Thank you, "+vf.vn.value.trim()+". A viewing of "+vf.vp.value+" on "+vf.vd.value+" would have been requested.";
+    vf.style.display="none";var ok=document.getElementById("ok");ok.classList.add("show");ok.scrollIntoView({behavior:"smooth",block:"center"})});
+  var nav=document.getElementById("nav"),bg=document.getElementById("bg");bg.onclick=function(){var o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")nav.classList.remove("open")});
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

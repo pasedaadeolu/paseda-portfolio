@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>{% block title %}Admin{% endblock %} | Portfolio</title>
+<style>
+:root{color-scheme:light dark;--bg:#f3efe6;--card:#faf7f0;--text:#161412;--muted:#5a554c;--line:#c9c2b2}
+@media(prefers-color-scheme:dark){:root{--bg:#121110;--card:#201e1b;--text:#efeae0;--muted:#a59e90;--line:#3a3632}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Georgia,"Times New Roman",serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:2px solid var(--text)}
+header nav{display:flex;gap:14px;align-items:center}a{color:var(--text)}main{max-width:960px;margin:0 auto;padding:24px 20px}
+h1,h2{margin:0 0 14px}.card{background:var(--card);border:2px solid var(--text);padding:18px;margin-bottom:18px;box-shadow:5px 5px 0 var(--line)}
+button,.btn{font:600 14px Georgia,serif;padding:8px 16px;border:2px solid var(--text);background:var(--text);color:var(--bg);cursor:pointer;text-decoration:none;display:inline-block}
+button.g,.btn.g{background:transparent;color:var(--text)}form.i{display:inline}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--text);background:var(--bg);color:var(--text);font:16px Georgia,serif}
+label{display:block;margin:12px 0 4px;font-size:14px;color:var(--muted)}.flash{border:2px solid var(--text);padding:10px;background:var(--card)}
+table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.msg{border-bottom:1px solid var(--line);padding:12px 0}.msg.new{border-left:5px solid var(--text);padding-left:12px}.muted{color:var(--muted);font-size:14px}
+</style></head><body>
+<header><b>Portfolio admin</b>{% if session.admin %}<nav><a href="/">View site</a><form class="i" method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ csrf_token() }}"><button class="g">Log out</button></form></nav>{% endif %}</header>
+<main>{% for m in get_flashed_messages() %}<p class="flash">{{ m }}</p>{% endfor %}{% block body %}{% endblock %}</main></body></html>

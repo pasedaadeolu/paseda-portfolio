@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aurelia Grand Hotel | Stay in quiet luxury</title>
+<meta name="description" content="Aurelia Grand Hotel: a luxury hotel website designed and built by Paseda Adeolu Praise.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f7f4ee;--bg2:#efe9dd;--card:#fff;--text:#14213a;--muted:#5d6577;--navy:#0f1b33;--gold:#b08a3e;--line:#e1d9c8;--onnavy:#f6efe0;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){color-scheme:dark;--bg:#0a1222;--bg2:#0f192d;--card:#142038;--text:#eee7d6;--muted:#a3acbf;--navy:#060c18;--gold:#d6b46a;--line:#25324d;--onnavy:#f6efe0}
+}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0a1222;--bg2:#0f192d;--card:#142038;--text:#eee7d6;--muted:#a3acbf;--navy:#060c18;--gold:#d6b46a;--line:#25324d;--onnavy:#f6efe0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:60}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.15;margin:0}
+a{color:inherit}
+.demo{background:var(--gold);color:#101a30;text-align:center;font-size:13px;padding:6px 12px;font-weight:500}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);color:var(--onnavy)}
+.bar{max-width:1140px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:500 22px "Playfair Display",serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}.logo i{color:var(--gold);font-style:normal}
+nav{display:flex;gap:28px;align-items:center}
+nav a{text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;transition:.2s}
+nav a:hover{opacity:1;color:var(--gold)}
+.btn{display:inline-block;border:0;cursor:pointer;font:500 13px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;background:var(--gold);color:#101a30;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px var(--gold)}
+.btn.line{background:none;border:1px solid var(--gold);color:var(--gold)}
+#burger{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:var(--onnavy);padding:6px 12px;font-size:18px}
+@media(max-width:820px){#burger{display:block}nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--navy);padding:20px;display:none}nav.open{display:flex}}
+.hero{position:relative;min-height:86vh;display:grid;place-items:center;text-align:center;color:var(--onnavy);padding:90px 20px 150px;overflow:hidden;
+  background:linear-gradient(180deg,#0f1b33 0%,#1d2f55 45%,#8a6a3a 100%)}
+.stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+.sky{position:absolute;left:0;right:0;bottom:0;height:34%;background:
+  linear-gradient(#0a1224,#0a1224) 6% 100%/7% 55% no-repeat,linear-gradient(#0a1224,#0a1224) 15% 100%/5% 80% no-repeat,
+  linear-gradient(#0a1224,#0a1224) 24% 100%/8% 45% no-repeat,linear-gradient(#0a1224,#0a1224) 38% 100%/6% 70% no-repeat,
+  linear-gradient(#0a1224,#0a1224) 50% 100%/9% 100% no-repeat,linear-gradient(#0a1224,#0a1224) 63% 100%/6% 60% no-repeat,
+  linear-gradient(#0a1224,#0a1224) 74% 100%/8% 85% no-repeat,linear-gradient(#0a1224,#0a1224) 86% 100%/6% 50% no-repeat,linear-gradient(#0a1224,#0a1224) 95% 100%/6% 70% no-repeat}
+.hero .in{position:relative;animation:up 1.2s both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.eyebrow{color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(44px,9vw,92px);margin:14px 0 18px}.hero h1 em{color:var(--gold)}
+.hero p{max-width:520px;margin:0 auto 30px;opacity:.85;font-size:18px}
+.book{position:relative;max-width:980px;margin:-70px auto 0;padding:0 20px;z-index:5}
+.bk{background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.45);padding:22px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px;align-items:end}
+.bk label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);padding:12px;font:16px Inter,sans-serif;border-radius:0}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.err{color:#c0392b;font-size:12.5px;display:block;min-height:0;margin-top:4px}
+@media(max-width:860px){.bk{grid-template-columns:1fr 1fr}.bk>.sub{grid-column:1/-1}}
+section{padding:88px 20px}.wrap{max-width:1140px;margin:0 auto}
+.head{text-align:center;margin-bottom:46px}.head h2{font-size:clamp(32px,4.6vw,48px);margin-top:10px}.head p{color:var(--muted);max-width:520px;margin:10px auto 0}
+.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.filters button{background:none;border:1px solid var(--line);color:var(--muted);padding:9px 20px;cursor:pointer;font:500 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.filters button[aria-pressed="true"]{background:var(--navy);color:var(--onnavy);border-color:var(--navy)}
+.rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.room{background:var(--card);border:1px solid var(--line);overflow:hidden;animation:pop .5s both;transition:transform .3s,box-shadow .3s}
+.room:hover{transform:translateY(-6px);box-shadow:0 24px 40px -26px rgba(0,0,0,.5)}
+.room .pic{height:180px;display:grid;place-items:center;font-size:62px;position:relative;overflow:hidden;transition:.5s}
+.room:hover .pic{font-size:72px}
+.room .body{padding:22px}.room h3{font-size:24px}.room p{margin:6px 0 14px;color:var(--muted);font-size:14.5px}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted)}.meta b{font:500 24px "Playfair Display",serif;color:var(--gold)}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.band{background:var(--bg2)}
+.am{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.am div{text-align:center;padding:30px 16px;background:var(--card);border:1px solid var(--line);transition:.3s}
+.am div:hover{border-color:var(--gold);transform:translateY(-4px)}
+.am span{font-size:34px;display:block;margin-bottom:8px}.am h3{font-size:19px}.am p{margin:4px 0 0;color:var(--muted);font-size:13.5px}
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.loc p{color:var(--muted)}.map{aspect-ratio:4/3;background:linear-gradient(135deg,var(--bg2),var(--line));display:grid;place-items:center;font-size:60px;border:1px solid var(--line)}
+@media(max-width:760px){.loc{grid-template-columns:1fr}}
+form.c{max-width:640px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}
+form.c label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+#ok{display:none;max-width:640px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--gold);padding:34px}#ok.show{display:block;animation:pop .5s both}
+@media(max-width:560px){form.c{grid-template-columns:1fr}}
+#quote{display:none;max-width:980px;margin:14px auto 0;padding:0 20px}#quote div{background:var(--navy);color:var(--onnavy);padding:16px 22px;font-size:15px}#quote b{color:var(--gold)}
+footer{background:var(--navy);color:var(--onnavy);padding:36px 20px;text-align:center;font-size:14px;opacity:.95}footer a{color:var(--gold)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Portfolio project by Paseda Adeolu Praise · booking tools are a demo</div>
+<header><div class="bar"><a class="logo" href="#top">Aurelia <i>Grand</i></a>
+  <button id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav id="nav"><a href="#rooms">Rooms</a><a href="#amenities">Experience</a><a href="#find">Location</a><a class="btn" href="#enquire">Enquire</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="stars" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
+  <div class="in"><div class="eyebrow">Five-star · City centre</div>
+    <h1>Stay in <em>quiet</em> luxury</h1>
+    <p>Elegant rooms, thoughtful service and a skyline that never gets old.</p>
+    <a class="btn" href="#rooms">Explore rooms</a> <a class="btn line" href="#amenities">The experience</a></div>
+</div>
+
+<div class="book"><form class="bk" id="bf" novalidate aria-label="Check availability">
+  <div><label for="ci">Check-in</label><input id="ci" type="date"><span class="err"></span></div>
+  <div><label for="co">Check-out</label><input id="co" type="date"><span class="err"></span></div>
+  <div><label for="gu">Guests</label><select id="gu"><option>1</option><option selected>2</option><option>3</option><option>4</option></select><span class="err"></span></div>
+  <div><label for="rt">Room</label><select id="rt"></select><span class="err"></span></div>
+  <div class="sub"><button class="btn" type="submit">Check rates</button></div>
+</form></div>
+<div id="quote" role="status"><div></div></div>
+
+<section id="rooms"><div class="wrap">
+  <div class="head rv"><div class="eyebrow" style="color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:12px">Accommodation</div><h2>Rooms &amp; suites</h2><p>Sample rates per night. Filter by what suits your stay.</p></div>
+  <div class="filters rv" id="fl"></div>
+  <div class="rooms" id="rm" aria-live="polite"></div>
+</div></section>
+
+<section id="amenities" class="band"><div class="wrap">
+  <div class="head rv"><div class="eyebrow" style="color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:12px">The experience</div><h2>Everything within reach</h2></div>
+  <div class="am rv"><div><span>🏊</span><h3>Rooftop pool</h3><p>Heated, with city views</p></div><div><span>💆</span><h3>Spa &amp; wellness</h3><p>Treatments and sauna</p></div><div><span>🍽️</span><h3>Fine dining</h3><p>Breakfast to late supper</p></div><div><span>🛎️</span><h3>24-hour concierge</h3><p>Tours, transport, tickets</p></div><div><span>📶</span><h3>Fast Wi-Fi</h3><p>Free throughout the hotel</p></div><div><span>🏋️</span><h3>Fitness studio</h3><p>Open around the clock</p></div></div>
+</div></section>
+
+<section id="find"><div class="wrap loc">
+  <div class="rv"><div class="eyebrow" style="color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:12px">Location</div><h2 style="font-size:clamp(30px,4vw,42px);margin:10px 0 14px">In the heart of the city</h2>
+    <p>1 Aurelia Square, Metro City (sample address). Ten minutes from the airport rail link and a short walk from museums, shops and dining.</p>
+    <p>Reception: +1 555 0100 · Check-in from 3pm · Check-out by 11am</p>
+    <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=city+centre+hotel" target="_blank" rel="noopener">Open in maps ↗</a></div>
+  <div class="map rv" role="img" aria-label="Map illustration">📍</div>
+</div></section>
+
+<section id="enquire" class="band"><div class="wrap">
+  <div class="head rv"><h2>Make an enquiry</h2><p>Tell us about your stay and we would reply with options.</p></div>
+  <form class="c rv" id="cf" novalidate>
+    <div><label for="n">Name</label><input id="n" autocomplete="name"><span class="err"></span></div>
+    <div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><span class="err"></span></div>
+    <div class="full"><label for="m">Message</label><textarea id="m" rows="4"></textarea><span class="err"></span></div>
+    <div class="full"><button class="btn" type="submit" style="width:100%">Send enquiry</button><p style="font-size:12px;color:var(--muted);text-align:center">Demo form: nothing is sent or stored.</p></div>
+  </form>
+  <div id="ok" role="status"><h3 style="font-size:30px;color:var(--gold)">Demo enquiry received</h3><p style="color:var(--muted)">This is a portfolio demonstration. No message was sent and no booking was made.</p></div>
+</div></section>
+</main>
+<footer>© 2026 Aurelia Grand Hotel. Designed &amp; built by Paseda Adeolu Praise · <a href="https://linkedin.com/in/pasedaadeolu" target="_blank" rel="noopener">LinkedIn</a></footer>
+
+<script>
+(function(){
+  var R=[["Deluxe King","🛏️","Calm, well-lit room with a king bed and work desk.",180,2,"Classic","linear-gradient(135deg,#d9c9a3,#b79a62)"],
+  ["Twin City View","🌆","Two single beds and floor-to-ceiling city views.",205,2,"Classic","linear-gradient(135deg,#9fb6d6,#5f7fb0)"],
+  ["Executive Suite","🛋️","Separate lounge, premium bedding and lounge access.",340,3,"Suite","linear-gradient(135deg,#c9b38b,#8a6a3a)"],
+  ["Family Suite","👨‍👩‍👧","Two bedrooms, ideal for families up to four.",390,4,"Family","linear-gradient(135deg,#a8c7b4,#5f9378)"],
+  ["Penthouse","🌃","Top-floor suite with terrace and private dining.",780,4,"Suite","linear-gradient(135deg,#2a3f6b,#0f1b33)"]];
+  var cat="All",rm=document.getElementById("rm"),fl=document.getElementById("fl"),rt=document.getElementById("rt");
+  function money(n){return "$"+n.toLocaleString("en-US")}
+  function draw(){rm.innerHTML=R.filter(function(r){return cat==="All"||r[5]===cat}).map(function(r,i){
+    return '<article class="room" style="animation-delay:'+i*80+'ms"><div class="pic" style="background:'+r[6]+'" aria-hidden="true">'+r[1]+'</div><div class="body"><h3>'+r[0]+'</h3><p>'+r[2]+'</p><div class="meta"><span>Up to '+r[4]+' guests</span><span><b>'+money(r[3])+'</b> / night</span></div></div></article>'}).join("")}
+  ["All","Classic","Suite","Family"].forEach(function(c){var b=document.createElement("button");b.textContent=c;b.setAttribute("aria-pressed",c==="All");b.onclick=function(){cat=c;fl.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw()};fl.appendChild(b)});
+  draw();
+  rt.innerHTML=R.map(function(r,i){return '<option value="'+i+'">'+r[0]+'</option>'}).join("");
+
+  var st=document.querySelector(".stars");for(var i=0;i<40;i++){var s=document.createElement("i");s.style.left=Math.random()*100+"%";s.style.top=Math.random()*55+"%";s.style.animationDelay=Math.random()*3+"s";st.appendChild(s)}
+  var nav=document.getElementById("nav"),bg=document.getElementById("burger");
+  bg.onclick=function(){var o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A")nav.classList.remove("open")});
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+  var t=new Date(),iso=function(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+  var bf=document.getElementById("bf"),ci=bf.ci,co=bf.co;ci.min=iso(t);co.min=iso(t);
+  function bad(el,m){el.setAttribute("aria-invalid","true");el.parentNode.querySelector(".err").textContent=m;return 1}
+  function clear(els){els.forEach(function(el){el.removeAttribute("aria-invalid");el.parentNode.querySelector(".err").textContent=""})}
+  bf.addEventListener("submit",function(ev){ev.preventDefault();clear([ci,co,bf.gu]);var er=0,r=R[bf.rt.value];
+    if(!ci.value||ci.value<iso(t))er+=bad(ci,"Choose a valid check-in date.");
+    if(!co.value||co.value<=ci.value)er+=bad(co,"Check-out must be after check-in.");
+    if(+bf.gu.value>r[4])er+=bad(bf.gu,r[0]+" sleeps up to "+r[4]+".");
+    var q=document.getElementById("quote"),box=q.firstElementChild;
+    if(er){q.style.display="none";return}
+    var nights=Math.round((new Date(co.value)-new Date(ci.value))/864e5),total=nights*r[3];
+    box.innerHTML="";var b=document.createElement("b");b.textContent=money(total);
+    box.append(nights+" night"+(nights>1?"s":"")+" in the "+r[0]+": sample estimate ",b," (not a real quote, no booking made).");
+    q.style.display="block";
+  });
+
+  var cf=document.getElementById("cf");
+  cf.addEventListener("submit",function(ev){ev.preventDefault();clear([cf.n,cf.e,cf.m]);var er=0;
+    if(cf.n.value.trim().length<2)er+=bad(cf.n,"Please enter your name.");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cf.e.value))er+=bad(cf.e,"Enter a valid email address.");
+    if(cf.m.value.trim().length<10)er+=bad(cf.m,"Please write at least 10 characters.");
+    if(er)return;cf.style.display="none";var ok=document.getElementById("ok");ok.classList.add("show");ok.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+})();
+</script>
+</body>
+</html>
